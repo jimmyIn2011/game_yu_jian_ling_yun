@@ -4,6 +4,26 @@
 import pygame as pg
 import random as rd
 
+
+def generate_clr(jingjie):
+    if 0 <= jingjie <= 3:
+        return WHITE
+    elif 4 <= jingjie <= 6:
+        return GREEN
+    elif 7 <= jingjie <= 9:
+        return BLUE
+    elif 9 <= jingjie <= 12:
+        return PURPLE
+    elif 13 <= jingjie <= 15:
+        return ORANGE
+    elif 16 <= jingjie <= 17:
+        return BLACK
+    elif 18 <= jingjie <= 19:
+        return YELLOW
+    else:
+        return WHITE
+          
+
 pg.init()
 pg.display.init()
 screen = pg.display.set_mode([800, 800])
@@ -159,7 +179,7 @@ while running:
         elif score >= 10000000:
             scene = 3
             win = True
-        screen.blit(pg.font.SysFont("华文楷体", 20).render(ch[jj], True, YELLOW), [20, mes - 40])
+        screen.blit(pg.font.SysFont("华文楷体", 20).render(ch[jj], True, generate_clr(jj)), [20, mes - 40])
     elif scene == 1:
         screen.blit(pg.image.load("./bg.jpg"), [0, 0])
         pg.draw.rect(screen, GREEN, start, 1)
