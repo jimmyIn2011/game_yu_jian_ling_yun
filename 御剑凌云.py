@@ -23,9 +23,9 @@ ch = ["凡人", "练气", "筑基", "金丹", "元婴", "化神", "炼虚", "合
       "仙王", "仙皇", "仙尊", "仙圣", "仙帝"]
 ji = [30, 100, 200, 500, 1000, 2000, 3500, 6000, 9000, 14000, 20000, 40000, 65000, 100000, 195000, 300000,
       500000, 1000000, 5000000, 10000000]
-myself = pg.image.load("./yjly_image/character.png")
-imgs = [[pg.image.load("./yjly_image/danyao1.png"), pg.image.load("./yjly_image/renshen.png")],
-        [pg.image.load("./yjly_image/yaoshou1.png")], [pg.image.load("./yjly_image/shit.png")]]
+myself = pg.image.load("./character.png")
+imgs = [[pg.image.load("./danyao1.png"), pg.image.load("./renshen.png")],
+        [pg.image.load("./yaoshou1.png")], [pg.image.load("./shit.png")]]
 mymap = []
 mapjs = 0
 place = 0
@@ -124,7 +124,7 @@ while running:
                         mapjs += max(nk[0][1], nk[1][1])
                         mymap.append(nk)
     if scene == 2:
-        screen.blit(pg.image.load("./yjly_image/bj2.jpg"), [0, 0])
+        screen.blit(pg.image.load("./bj2.jpg"), [0, 0])
         for i in range(len(mymap)):
             if mymap[i][0] != 0:
                 mymap[i][0][2][0] -= 2
@@ -161,13 +161,13 @@ while running:
             win = True
         screen.blit(pg.font.SysFont("华文楷体", 20).render(ch[jj], True, YELLOW), [20, mes - 40])
     elif scene == 1:
-        screen.blit(pg.image.load("./yjly_image/bg.jpg"), [0, 0])
+        screen.blit(pg.image.load("./bg.jpg"), [0, 0])
         pg.draw.rect(screen, GREEN, start, 1)
         if start.collidepoint(pg.mouse.get_pos()):
             pg.draw.rect(screen, GREEN, [301, 401, 198, 98])
         screen.blit(pg.font.SysFont("华文楷体", 65).render("开   始", True, BLACK), [301, 401])
     elif scene == 3:
-        screen.blit(pg.image.load("./yjly_image/bg.jpg"), [0, 0])
+        screen.blit(pg.image.load("./bg.jpg"), [0, 0])
         pg.draw.rect(screen, GREEN, start, 1)
         if start.collidepoint(pg.mouse.get_pos()):
             pg.draw.rect(screen, GREEN, [301, 401, 198, 98])
