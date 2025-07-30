@@ -174,7 +174,7 @@ while running:
                         jj -= 1
         screen.blit(myself, [0, mes])
         screen.blit(pg.font.SysFont("华文楷体", 20).render(str(score), True, BLACK), [20, mes - 70])
-        if score < 0:
+        if score < 0 or (mymap[len(mymap)-1] == [0, 0] and score < 10000000):
             scene = 3
         elif score >= 10000000:
             scene = 3
